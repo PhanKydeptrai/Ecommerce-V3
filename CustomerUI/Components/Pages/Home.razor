@@ -1,0 +1,56 @@
+﻿@page "/"
+
+<div class="nav justify-content-center" style="background-color:#2E2E2E">
+        <a class="nav-link category font-monospace fs-5" aria-current="page" style="color: #2E2E2E" href="#">Combo</a
+</div>
+<div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/image/Carousel/BO.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="/image/Carousel/DinnerP2.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="/image/Carousel/OtXiemXanh.webp" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<CategoryNav/>
+
+<div class="container">
+    <div>
+
+    </div>
+    <div class="row mt-4">
+        @if(products.Count() > 0)
+        {
+            foreach(var item in products)
+            {
+                <div class="card col-md-3 m-md-3 gy-3" style="width: 18rem;">
+                    <img src="/image/Product/2-MIENG.jpg" class="card-img-top">
+                    <div class="card-body mx-auto ">
+                        <h5 class="card-title">@item.ProductName </h5>
+                        <p class="card-text h5">@item.Price Vnđ</p>
+                        <a href="#" class="btn btn-primary">Add To Cart</a>
+                    </div>
+                </div>
+            }
+        }
+            
+    </div>  
+</div>

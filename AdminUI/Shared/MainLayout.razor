@@ -1,0 +1,42 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+
+<MudLayout>
+    <MudAppBar>
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <MudSpacer />
+        <MudButtonGroup >
+            <MudMenu Icon="@Icons.Material.Filled.AccountCircle" Color="Color.Inherit" Style="align-self: auto;">
+                <MudMenuItem Href="">Thông tin cá nhân</MudMenuItem>
+                <MudMenuItem Href="">Đăng xuất</MudMenuItem>
+            </MudMenu>
+        </MudButtonGroup>
+        @* <MudIconButton Icon="fas fa-user">
+            <MudNavGroup Expanded="false">
+                <MudNavLink Href="" Match="NavLinkMatch.Prefix">Thông tin tài khoản</MudNavLink>
+                <MudNavLink Href="" Match="NavLinkMatch.Prefix">Đăng Xuất</MudNavLink>
+            </MudNavGroup>
+        </MudIconButton> *@
+        
+    </MudAppBar>
+    <MudDrawer @bind-Open="@_drawerOpen">
+        <NavMenu/>
+    </MudDrawer>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}

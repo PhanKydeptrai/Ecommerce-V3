@@ -1,0 +1,25 @@
+﻿@page "/ProductsByCategory/{categoryId}"
+@rendermode InteractiveServer
+<CategoryNav/>
+
+<div class="container">
+    <div>
+    </div>
+    <div class="row mt-4">
+        @if (products.Count() > 0)
+        {
+            foreach (var item in products)
+            {
+                <div class="card col-md-3 m-md-3 gy-3" style="width: 18rem;">
+                    <img src="/image/Product/2-MIENG.jpg" class="card-img-top">
+                    <div class="card-body mx-auto ">
+                        <h5 class="card-title">@item.ProductName </h5>
+                        <p class="card-text h5">@item.Price Vnđ</p>
+                        <a href="#" class="btn btn-primary">Add To Cart</a>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+</div>

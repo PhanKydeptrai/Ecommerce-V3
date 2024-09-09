@@ -1,0 +1,11 @@
+﻿<ul class="nav justify-content-center" style="background-color:#2E2E2E">
+    @if (categories.Count() > 0)
+    {
+        foreach (var item in categories)
+        {
+            <li class="nav-item">
+                <a class="nav-link category font-monospace fs-5" href="ProductsByCategory/@item.CategoryId">@item.CategoryName</a>
+            </li>
+        }
+    }
+</ul>
